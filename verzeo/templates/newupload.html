@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link href='https://fonts.googleapis.com/css?family=Almendra' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Alegreya SC' rel='stylesheet'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js"></script>
+  <title>Human Skintone</title>
+  <style>
+    body {
+      font-family: 'Almendra';font-size: 22px;
+    }
+    </style>
+    <style>
+      h2{
+          font-family: 'Alegreya SC';font-size: 32px;
+      }
+      </style>
+</head>
+<style type="text/css">
+  body {
+    margin: 0px;
+    height: 100vh;
+    
+    background-image: linear-gradient(to right,rgb(231, 206, 206), rgb(158, 203, 221));
+    
+  }
+
+  .center {
+    height: max-content;
+    margin: 40px auto;
+    width: max-content;
+    padding: 20px;
+  }
+
+  .form-input {
+    width: 250px;
+    padding: 20px;
+    background: #fff;
+    border: 2px dashed #555;
+  }
+
+  .form-input input {
+    display: none;
+  }
+
+  .b1 {
+    align-items: center;
+  }
+
+  i{
+    margin-right: 10px;
+  }
+
+  .form-input label {
+    display: block;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #333;
+    color: #fff;
+    font-size: 15px;
+    font-family: "Open Sans", sans-serif;
+    text-transform: Uppercase;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .form-input img {
+    width: 100%;
+    display: none;
+    margin-top: 10px;
+  }
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid > p{
+    margin: 0;
+    display:flex;
+    align-items: center;
+  }
+  legend{
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    padding: 0;
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    line-height: inherit;
+    color: inherit;
+    white-space: normal;
+    padding: 0 10px;
+    font-weight: bold;
+  }
+  fieldset {
+    min-width: 0;
+    padding: 20px;
+    border: 2px dashed #555;
+  }
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Human Skintone</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"
+              href="/home">Home</a>
+          </li>
+
+
+        </ul>
+
+
+      </div>
+    </div>
+  </nav>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <div class="container">
+
+    <!-- Section heading -->
+    <h2 class="h1-responsive font-weight-bold mb-5">Upload Image For Skin Tone</h2>
+    <!-- Section description -->
+    <p class="grey-text w-responsive mx-auto mb-5">Inorder to know your skin tone all you have to do is either capture
+      an Image using your webcam or upload an image from your Gallery. The rest we'll do for you so sit back and relax!!
+    </p>
+  </div>
+
+
+  <center>
+  <div class="center">
+    <div class="form-input" id="collapseExample">
+
+      <div class="box_data">
+        <span>Choose from Gallery</span>
+      </div>
+      <a class="btn btn-unique" href=" " height="32px" width="28px" target="_blank"></a>
+      <label for="file-ip-1">
+        <i class="fa fa-upload"></i>
+        Upload Image</label>
+      <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
+      <div class="preview">
+        <img id="file-ip-1-preview">
+      </div>
+    </div>
+  </center>
+
+    <center><p>OR</p></center>
+<center><br>
+<input type="text" value="" id="url" placeholder="Enter Image URL">
+  </div>
+  <div id="result"></div>
+  <div class="center">
+    <button  type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark" onclick="upload()">
+      SUBMIT
+    </button>
+  </div>
+</center>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script type="text/javascript">
+    function showPreview(event) {
+      if (event.target.files.length > 0) {
+        var src = URL.createObjectURL(event.target.files[0]);
+        var preview = document.getElementById("file-ip-1-preview");
+        preview.src = src;
+        preview.style.display = "block";
+      }
+
+    }
+  function upload() {
+  var url=document.getElementById('url').value;
+        var file_data = $('#file-ip-1').prop('files')[0];
+        var form_data = new FormData();
+        form_data.append('file', file_data);
+         form_data.append('isurl', 0);
+
+         if (file_data)
+          {
+
+            $.ajax({
+                url: "upload",
+                method: "POST",
+                data: form_data,
+                contentType: false,
+                processData: false,
+                async: false,
+                cache: false,
+                success: function (res) {
+
+                   $('#result').html("<center> The skintone of the image is " + res+"</center>")
+                }
+            });
+
+            }
+            else
+            {
+
+      $.ajax({
+        url:"upload",
+        method:"POST",
+        data:{url:url,isurl:1},
+        success:function(res)
+        {
+        $('#result').html("<center>The skintone of the image is " + res +"</center>")
+        }
+      });
+      }
+
+
+    }
+</script>
+</body>
+<script>
+  // CAMERA SETTINGS.
+  Webcam.set({
+    width: 400,
+    height: 400,
+    image_format: 'jpeg',
+    jpeg_quality: 100
+  });
+  Webcam.attach('#camera');
+
+  // SHOW THE SNAPSHOT.
+  takeSnapShot = function () {
+    Webcam.snap(function (data_uri) {
+      document.getElementById('snapShot').innerHTML =
+        '<img src="' + data_uri + '" width="400px" height="300px" />';
+    });
+  }
+</script>
+
+</html>
